@@ -1,11 +1,14 @@
 import './MoviesContainer.css';
+import MoviePoster from '../MoviePoster/MoviePoster'
 
-function Movies() {
+function MoviesContainer({movies}) {
   return (
       <section className='MoviesContainer'>
-        <p>We'll make some movie posters show up here!</p>
+       {movies.map((movie) => (
+        <MoviePoster key={movie.id} movie={movie}/>
+       ))}
       </section>
   );
 }
   
-export default Movies;
+export default MoviesContainer;
