@@ -4,9 +4,9 @@ import MoviePoster from '../MoviePoster/MoviePoster'
 function MoviesContainer({movies}) {
   return (
       <section className='MoviesContainer'>
-       {movies.map((movie) => (
+      {movies.map((movie) => (
         <MoviePoster key={movie.id} movie={movie}/>
-       ))}
+      ))}
       </section>
   );
 }
