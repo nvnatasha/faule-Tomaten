@@ -1,4 +1,4 @@
-.MoviePoster img {
+.MoviePoster .poster-image {
     height: 15rem;
     width: 10rem;
     margin: 14px 14px -12px 14px;
@@ -7,14 +7,16 @@
     border-top-right-radius: 10%;;
 }
 
-.MoviePoster h3 {
+.vote-container {
+    display: flex;
+    align-items: center;
     text-align: center;
+    justify-content: center;
     background-color: white;
     width: 9rem;
     padding: 3%;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    
 }
 
 .MoviePoster {
@@ -27,4 +29,22 @@
 
 .MoviePoster:hover {
     transform: translateY(-5px);
+}
+
+.vote-container button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.MoviePoster button:hover {
+    transform: translateY(-5px);
+}
+
+.voteButton img {
+    width: 20px;
+    height: 20px
 }
