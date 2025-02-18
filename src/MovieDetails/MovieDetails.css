@@ -1,0 +1,69 @@
+.MovieDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .BackdropImg {
+    width: 90%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    margin-bottom: -13.7rem;
+  }
+
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 90%;
+    border-bottom-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+
+  .details-container p {
+    color: black;
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 20px;
+    margin: 10px;
+  }
+
+  h2 {
+    padding: 30px;
+    letter-spacing: .15cap;
+    color: rgb(80, 80, 234);
+  }
+
+.genres {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.genre {
+    background-color: rgb(125, 190, 236);
+    color: white;
+    Font-weight: bold;
+    font-size: small;
+    padding: 10px;
+    border-radius: 15%;
+    margin-left: 20px;
+
+}
+
+  .home-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
