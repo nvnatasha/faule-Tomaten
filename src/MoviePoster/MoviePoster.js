@@ -1,19 +1,18 @@
 import './MoviePoster.css';
 import upvote from '../icons/upvote.png'
 import downvote from '../icons/downvote.png'
-import movieDetails from '../data/movie_details'
 
-function MoviePoster({ movie, votingChange, setSelectedMovie }) {
-  
+
+function MoviePoster({ movie, votingChange, getMovieDetails }) {
   return (
     <section className='MoviePoster'>
-      <img className="poster-image" src={movie.poster_path} alt={movie.title} onClick={() => setSelectedMovie(movieDetails)} />
+      <img className="poster-image" src={movie.poster_path} alt={movie.title} onClick={() =>getMovieDetails(movie.id)} />
         <div className='vote-container'>
-          <button className='voteButton' onClick={() => votingChange(movie.id, 1) }> 
+          <button className='voteButton' onClick={() => votingChange(movie.id, "up") }> 
           <img src={upvote} alt="Upvote"/>
           </button> 
           <h3> {movie.vote_count} </h3>
-          <button className='voteButton' onClick={() => votingChange(movie.id, -1) }>
+          <button className='voteButton' onClick={() => votingChange(movie.id, "down") }>
           <img src={downvote} alt="Downvote"/>
           </button> 
         </div>
