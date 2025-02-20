@@ -1,8 +1,8 @@
 import './MoviesContainer.css';
 import MoviePoster from '../MoviePoster/MoviePoster'
-// import movieDetails from '../data/movie_details';
 
-function MoviesContainer({movies, votingChange, setSelectedMovie }) {
+
+function MoviesContainer({movies, votingChange, getMovieDetails }) {
   return (
       <section className='MoviesContainer'>
       {movies.map((movie) => (
@@ -10,10 +10,10 @@ function MoviesContainer({movies, votingChange, setSelectedMovie }) {
         key={movie.id} 
         movie={movie} 
         votingChange={votingChange}
-        setSelectedMovie={setSelectedMovie} />
+        getMovieDetails={ getMovieDetails} />
       ))}
       </section>
   );
 }
-  
+
 export default MoviesContainer;
