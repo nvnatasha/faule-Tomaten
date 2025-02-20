@@ -1,8 +1,6 @@
 import './MovieDetails.css';
 
 function MovieDetails( {movie} ) {
-  console.log(movie)
-
   if (!movie) {
     return <p>Loading...</p>; 
   }  
