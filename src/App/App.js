@@ -32,7 +32,6 @@ function App() {
   }
 
   function votingChange (id, direction) {
-    console.log(direction)
     fetch(`https://rancid-tomatillos-api-ce4a3879078e.herokuapp.com/api/v1/movies/${id}`, {
       method: 'PATCH',
       headers: {
