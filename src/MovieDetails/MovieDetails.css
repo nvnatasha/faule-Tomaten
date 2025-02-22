@@ -35,7 +35,7 @@
   h2 {
     padding: 30px;
     letter-spacing: .15cap;
-    color: rgb(80, 80, 234);
+    color: #ff6f6f;
   }
 
 .genres {
@@ -45,8 +45,8 @@
 }
 
 .genre {
-    background-color: rgb(125, 190, 236);
-    color: white;
+    background-color: #96ff95;
+    color: #ff6f6f;
     Font-weight: bold;
     font-size: small;
     padding: 10px;
@@ -60,8 +60,6 @@
     top: 10px;
     right: 10px;
     padding: 10px 15px;
-    background: #ff4d4d;
-    color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
