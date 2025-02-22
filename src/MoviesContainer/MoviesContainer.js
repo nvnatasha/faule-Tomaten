@@ -13,7 +13,7 @@ function MoviesContainer({movies, votingChange, getMovieDetails }) {
         getMovieDetails={ getMovieDetails} />
       ))}
       </section>
-  );
+  )
 }
 
 export default MoviesContainer;
