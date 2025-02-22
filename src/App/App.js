@@ -1,18 +1,18 @@
 import './App.css';
-import searchIcon from '../icons/search.png';
-import home from '../icons/home.png'
-
-// Example imports (for later):
+import { Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import MovieDetails from '../MovieDetails/MovieDetails'
+import MovieDetails from '../MovieDetails/MovieDetails';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
+import home from '../icons/home.png';
 
 function App() {
   const [movies, setMovies] = useState([])
   const [selectedMovie, setSelectedMovie] = useState(null)
+  const navigate = useNavigate()
+  const location = useLocation()
   
   useEffect(() => {
-    getMovies();
+    getMovies()
   },[])
 
   function getMovies() {
@@ -26,7 +26,8 @@ function App() {
     fetch(`https://rancid-tomatillos-api-ce4a3879078e.herokuapp.com/api/v1/movies/${id}`)
     .then(response => response.json())
     .then(data => {
-      setSelectedMovie(selectedMovie => ({ ...selectedMovie, ...data })); 
+      setSelectedMovie(selectedMovie => ({ ...selectedMovie, ...data }))
+      navigate(`/${id}`)
     })
     .catch(error => console.log(error.message))
   }
@@ -53,28 +54,25 @@ function App() {
     .catch(error => console.log(error.message))
   }
 
-  function renderMoviesContainer() {
-    return (
-      <MoviesContainer
-      movies={movies}
-      votingChange={votingChange}
-      getMovieDetails={getMovieDetails} />
-    )
-  }
- 
+
   return (
     <main className='App'>
       <header>
         <h1>faule Tomaten</h1>
-          <button onClick={() => setSelectedMovie(null)}>
-            <img src={home} alt='Home button' />
-          </button>
+          <nav>
+          {location.pathname !== '/' && (
+            <Link to="/" onClick={() => setSelectedMovie(null)}>
+              <img src={home} alt="Home button" />
+            </Link>
+          )}
+          </nav>   
       </header>
-      {selectedMovie ? <MovieDetails movie={selectedMovie} />  : renderMoviesContainer()}
+      <Routes>
+        <Route path="/" element={<MoviesContainer movies={movies} votingChange={votingChange} getMovieDetails={getMovieDetails} />} />
+        <Route path="/:id" element={<MovieDetails movie={selectedMovie} />} />
+      </Routes>
     </main>
   );
 }
-
-
 
 export default App;

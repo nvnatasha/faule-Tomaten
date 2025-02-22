@@ -2,10 +2,10 @@ import './MovieDetails.css';
 
 function MovieDetails( {movie} ) {
   if (!movie) {
-    return <p>Loading...</p>; 
+    return <p>Loading...</p> 
   }  
 
-  const genres = movie.genre_ids || [];
+  const genres = movie.genre_ids || []
 
   return (
     <section className='MovieDetails'>
@@ -20,7 +20,7 @@ function MovieDetails( {movie} ) {
         <p>{movie.overview}</p>
       </div>
     </section>
-  );
+  )
 }
 
 export default MovieDetails;
